@@ -1,13 +1,27 @@
 const {Command, flags} = require('@oclif/command')
 const path = require('path')
 const midwife = require('midwife')
+const Plugins = require('midwife-core-plugins')
 
 class MidwifeCliCommand extends Command {
   async run() {
     const {flags} = this.parse(MidwifeCliCommand)
     const {file} = flags
     const fileName = path.resolve(process.cwd(), file)
-    const config = require(fileName)
+    let config
+    try {
+      config = require(fileName)
+    } catch (error) {
+      console.log(`${file} not found. Building with default configuration.`)
+      config = {
+        mode: 'development',
+        dataDir: './data',
+        viewsDir: './views',
+        outDir: './dist',
+        refPrefix: '#',
+        plugins: Plugins.all,
+      }
+    }
     midwife.build(config)
   }
 }
