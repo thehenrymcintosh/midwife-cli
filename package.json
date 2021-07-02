@@ -1,7 +1,7 @@
 {
   "name": "midwife-cli",
   "description": "CLI for the Midwife static site builder",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Henry McIntosh",
   "bin": {
     "midwife-cli": "./bin/run"

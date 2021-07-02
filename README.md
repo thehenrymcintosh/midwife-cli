@@ -19,7 +19,7 @@ $ npm install -g midwife-cli
 $ midwife-cli COMMAND
 running command...
 $ midwife-cli (-v|--version|version)
-midwife-cli/0.1.0 darwin-x64 node-v12.22.0
+midwife-cli/0.2.0 darwin-x64 node-v12.22.0
 $ midwife-cli --help [COMMAND]
 USAGE
   $ midwife-cli COMMAND
