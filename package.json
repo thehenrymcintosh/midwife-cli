@@ -11,9 +11,13 @@
     "@oclif/command": "^1.8.0",
     "@oclif/config": "^1.17.0",
     "@oclif/plugin-help": "^3.2.2",
+    "cheerio": "^1.0.0-rc.10",
     "chokidar": "^3.5.2",
+    "express": "^4.17.1",
     "midwife": "0.0.1",
-    "midwife-core-plugins": "0.0.1"
+    "midwife-core-plugins": "0.0.1",
+    "morgan": "^1.10.0",
+    "reload": "^3.2.0"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.26.0",
