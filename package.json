@@ -14,9 +14,10 @@
     "cheerio": "^1.0.0-rc.10",
     "chokidar": "^3.5.2",
     "express": "^4.17.1",
-    "midwife": "0.0.1",
-    "midwife-core-plugins": "0.0.1",
+    "midwife": "^0.0.3",
+    "midwife-core-plugins": "^0.0.1",
     "morgan": "^1.10.0",
+    "open": "^8.2.1",
     "reload": "^3.2.0"
   },
   "devDependencies": {

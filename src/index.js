@@ -26,6 +26,18 @@ class MidwifeCliCommand extends Command {
       console.log(`${file} not found. Building with default configuration.`)
       config = defaultConfig
     }
+    async function build() {
+      // return boolean to indicate success
+      try {
+        await midwife.build(config)
+        return true
+      } catch (error) {
+        console.log(`Midwife build failed: ${error}`)
+      }
+      return false
+    }
+    const canBuild = await build()
+    if (!canBuild) return
     let server
     if (live) {
       server = new Server(config.outDir, port)
@@ -37,23 +49,17 @@ class MidwifeCliCommand extends Command {
         if (running) return
         running = true
         console.log('Building...')
-        midwife.build(config)
+        build()
         .then(() => {
           running = false
           if (server) server.reload()
           console.log('Waiting for changes...')
         })
-        .catch(() => {
-          running = false
-          if (server) server.reload()
-          console.log('Waiting for changes...')
-        })
       })
-    } else {
-      midwife.build(config)
     }
   }
 }
+
 
 MidwifeCliCommand.description = `Build a Midwife site using a CLI
 `

@@ -5,6 +5,7 @@ const http = require('http')
 const logger = require('morgan')
 const cheerio = require('cheerio')
 const fs = require('fs')
+const openInBrowser = require('open')
 
 function stripTrailingSlash(str) {
   if (str.substr(-1) === '/') {
@@ -50,6 +51,7 @@ class Server {
     this.initserver()
     this.server = http.createServer(this.app)
     this.beginReload()
+    openInBrowser('http://localhost:8080/')
   }
 
   initserver() {
